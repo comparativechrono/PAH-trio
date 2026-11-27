@@ -1,0 +1,13 @@
+f8feb91154d75f7f573d7f9cbdab3369  data/parents/TRIO-C_1-1_R1.fastq.gz
+055a14d9db3a233199ee33d8af0edcbb  data/parents/TRIO-C_1-1_R2.fastq.gz
+1f9d8acd226fb91462bf8dc8e7380e6e  data/parents/TRIO-C_1-2_R1.fastq.gz
+ed23fc85f1207c84338e617fd4e56410  data/parents/TRIO-C_1-2_R2.fastq.gz
+9bd64426f470e3c0beadf080e484e1b5  data/proband/TRIO-C_2-1_R1.fastq.gz
+b64395032df2d903451bd3286e179048  data/proband/TRIO-C_2-1_R2.fastq.gz
+f4af2b65c19d70b23cbbe56f6265b3f8  resources/Mills_1000G_indels_TRIO-C.vcf.gz
+547022755161319997ddeaf64e75c0e3  resources/Mills_1000G_indels_TRIO-C.vcf.gz.tbi
+7ec097a3919742904452bddfa8c64e58  resources/TRIO-C_MANE_genes.gff3.gz
+ce470516c1303700a9aa409962b0d09b  resources/TRIO-C_coding_exons.bed
+41f27d3c00e813998a7bb5925b9d02d8  resources/TRIO-C_regions_GRCh38.bed
+8318f1f4bdde4773873801b79493f108  resources/dbsnp157_TRIO-C.vcf.gz
+db0a772ed3b778188386c8f1f5501cbb  resources/dbsnp157_TRIO-C.vcf.gz.tbi
