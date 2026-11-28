@@ -1,0 +1,6 @@
+c71051ee8fa4e804096108c0fcfc1fd0  data/parents/TRIO-D_1-1_R1.fastq.gz
+3ba3dc8746bea0c8282f8ace4d55e01f  data/parents/TRIO-D_1-1_R2.fastq.gz
+adc4b77ab7548666389db46e5a53cd6d  data/parents/TRIO-D_1-2_R1.fastq.gz
+264379e8ba8662a7a9249c3aa31262f7  data/parents/TRIO-D_1-2_R2.fastq.gz
+00e874641862c2949b00e17d76400174  data/proband/TRIO-D_2-1_R1.fastq.gz
+6e19c95c387879a2b830572446ee76c5  data/proband/TRIO-D_2-1_R2.fastq.gz
