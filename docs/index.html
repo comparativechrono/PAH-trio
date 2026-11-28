@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voyage to planet Jupyter: MDT data</title>
+<meta name="description" content="Download your team's family for the GM5 Bioinformatics MDT simulation, Voyage to planet Jupyter: TRIO-D for the Scrum team and TRIO-E for the Kanban team.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3CclipPath id='c'%3E%3Ccircle cx='16' cy='16' r='15'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='32' height='32' fill='%23EADBC8'/%3E%3Crect y='8' width='32' height='4' fill='%23CF9A6C'/%3E%3Crect y='15' width='32' height='5' fill='%23A4553A'/%3E%3Crect y='24' width='32' height='4' fill='%23901A3A'/%3E%3Cellipse cx='21' cy='19.5' rx='4' ry='2' fill='%23F3E9DC'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #F1F5F9;
+    --panel: #FFFFFF;
+    --ink: #1E293B;
+    --muted: #475569;
+    --rule: #CBD5E1;
+    --scrum: #901A3A;
+    --scrum-tint: #F7E8ED;
+    --kanban: #0F766E;
+    --kanban-tint: #E2F2EF;
+    --code-bg: #1E293B;
+    --code-ink: #E2E8F0;
+    --code-dim: #94A3B8;
+    --focus: #B45309;
+    --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-underline-offset: 0.18em; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+  /* the bands of Jupiter, the one bold element on the page */
+  .bands { display: block; width: 100%; height: clamp(96px, 16vw, 168px); }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header.intro { padding: 36px 0 8px; }
+  h1 {
+    font-stretch: 125%;
+    font-weight: 800;
+    font-size: clamp(2.1rem, 5.4vw, 3.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    max-width: 16ch;
+  }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 62ch; margin: 0; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .teams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 32px 0 8px; }
+  .team { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .team > .head { padding: 20px 24px 18px; color: #FFFFFF; }
+  .team.scrum > .head { background: var(--scrum); }
+  .team.kanban > .head { background: var(--kanban); }
+  .team .who { font-size: 1.05rem; font-weight: 500; margin: 0 0 2px; opacity: 0.92; }
+  .team h2 { font-stretch: 125%; font-weight: 800; font-size: 2.6rem; line-height: 1; margin: 0; letter-spacing: -0.005em; }
+  .team .body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+  .team p { margin: 0; }
+  .download {
+    display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+    font: 600 1.05rem/1 var(--sans); text-decoration: none; color: #FFFFFF;
+    padding: 14px 20px; border-radius: 8px;
+  }
+  .scrum .download { background: var(--scrum); }
+  .kanban .download { background: var(--kanban); }
+  .download:hover { filter: brightness(1.12); }
+  .download svg { width: 18px; height: 18px; flex: none; }
+  .download .size { font-weight: 400; opacity: 0.85; }
+  .terminal-label { font-weight: 600; margin: 4px 0 -8px; }
+
+  .code { position: relative; background: var(--code-bg); color: var(--code-ink); border-radius: 8px; }
+  .code pre {
+    margin: 0; padding: 16px 18px; padding-right: 86px;
+    font: 400 0.93rem/1.6 var(--mono);
+  }
+  .code .ln { display: block; white-space: pre-wrap; overflow-wrap: anywhere; padding-left: 2ch; text-indent: -2ch; }
+  .code .c { color: var(--code-dim); }
+  .copy {
+    position: absolute; top: 10px; right: 10px;
+    font: 500 0.85rem/1 var(--sans); color: var(--code-ink);
+    background: transparent; border: 1px solid #475569; border-radius: 6px;
+    padding: 8px 10px; cursor: pointer;
+  }
+  .copy:hover { border-color: var(--code-ink); }
+  .copy[data-done] { border-color: #5EEAD4; color: #5EEAD4; }
+  .readme { font-size: 0.98rem; color: var(--muted); }
+
+  section.after { padding: 32px 0 8px; }
+  section.after h2 { font-stretch: 112%; font-weight: 750; font-size: 1.7rem; margin: 0 0 18px; }
+  ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: step; }
+  ol.steps > li {
+    counter-increment: step; position: relative;
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 22px 18px 74px;
+  }
+  ol.steps > li::before {
+    content: counter(step);
+    position: absolute; left: 20px; top: 16px;
+    width: 34px; height: 30px; display: grid; place-items: center;
+    font: 700 1rem/1 var(--sans); color: #FFFFFF; background: var(--ink);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+  ol.steps h3 { font-size: 1.12rem; font-weight: 700; margin: 0 0 4px; }
+  ol.steps p { margin: 0; max-width: 70ch; }
+  ol.steps .code { margin-top: 12px; max-width: 560px; }
+  code.inline { font: 500 0.92em var(--mono); background: #E2E8F0; padding: 0.08em 0.35em; border-radius: 4px; }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.95rem; }
+  footer p { margin: 0 0 8px; max-width: 78ch; }
+
+  @media (max-width: 860px) {
+    .teams { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    header.intro { padding-top: 24px; }
+    .team > .head, .team .body { padding-left: 18px; padding-right: 18px; }
+    ol.steps > li { padding: 62px 18px 18px; }
+    ol.steps > li::before { left: 18px; top: 18px; }
+    .code pre { padding-right: 18px; padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .download, .copy { transition: filter 0.15s, border-color 0.15s, color 0.15s; }
+  }
+</style>
+</head>
+<body>
+
+<svg class="bands" viewBox="0 0 1200 140" preserveAspectRatio="none" role="img" aria-label="The coloured cloud bands of Jupiter, with the Great Red Spot">
+  <rect width="1200" height="140" fill="#EADBC8"/>
+  <path fill="#CF9A6C" d="M0,30 C100,22 200,38 300,30 S500,22 600,30 S800,38 900,30 S1100,22 1200,30 L1200,140 L0,140 Z"/>
+  <path fill="#F3E9DC" d="M0,50 C120,58 240,44 360,51 S600,58 720,50 S960,43 1080,51 S1170,55 1200,52 L1200,140 L0,140 Z"/>
+  <path fill="#A4553A" d="M0,76 C150,70 300,84 450,77 S750,69 900,77 S1100,84 1200,76 L1200,140 L0,140 Z"/>
+  <path fill="#E2C29E" d="M0,100 C110,106 220,94 330,100 S550,106 660,99 S880,93 990,100 S1150,105 1200,101 L1200,140 L0,140 Z"/>
+  <path fill="#901A3A" d="M0,120 C130,115 260,126 390,120 S650,114 780,121 S1040,126 1200,119 L1200,140 L0,140 Z"/>
+  <ellipse cx="905" cy="86" rx="58" ry="17" fill="#7A1530"/>
+  <ellipse cx="905" cy="86" rx="38" ry="10" fill="#B8475C"/>
+</svg>
+
+<main class="wrap">
+  <header class="intro">
+    <h1>Voyage to planet Jupyter</h1>
+    <p class="lede">Data for the MDT simulation in GM5 Bioinformatics, Friday 4 December 2026. <strong>Each team works on its own family,</strong> so download your team's reads, with the button or in a terminal on your VM.</p>
+  </header>
+
+  <div class="teams">
+    <article class="team scrum" aria-labelledby="scrum-family">
+      <div class="head">
+        <p class="who">Scrum team</p>
+        <h2 id="scrum-family">TRIO-D</h2>
+      </div>
+      <div class="body">
+        <p>A male proband with pulmonary arterial hypertension, and his parents, who are both well. Exome reads for all three, six FASTQ files in one archive.</p>
+        <a class="download" href="TRIO-D.tar.gz" download>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9 2h2v9.6l3.3-3.3 1.4 1.4L10 15.4 4.3 9.7l1.4-1.4L9 11.6V2zM3 16h14v2H3z"/></svg>
+          Download TRIO-D <span class="size">(11.7 MB)</span>
+        </a>
+        <p class="terminal-label">Or in a terminal</p>
+        <div class="code">
+          <button class="copy" type="button" aria-label="Copy the TRIO-D commands">Copy</button>
+<pre><code><span class="ln">mkdir -p ~/GM5_family/mdt</span><span class="ln">cd ~/GM5_family/mdt</span><span class="ln">wget https://<wbr>comparativechrono.github.io/<wbr>PAH-trio/<wbr>TRIO-D.tar.gz</span><span class="ln">tar -xzf TRIO-D.tar.gz</span><span class="ln">cd TRIO-D</span><span class="ln">md5sum -c md5sums.txt</span></code></pre>
+        </div>
+        <p class="readme">What's in it: <a href="https://github.com/comparativechrono/PAH-trio/tree/main/TRIO-D">the TRIO-D README</a></p>
+      </div>
+    </article>
+
+    <article class="team kanban" aria-labelledby="kanban-family">
+      <div class="head">
+        <p class="who">Kanban team</p>
+        <h2 id="kanban-family">TRIO-E</h2>
+      </div>
+      <div class="body">
+        <p>A male proband with pulmonary arterial hypertension, and his parents, who are both well. Exome reads for all three, six FASTQ files in one archive.</p>
+        <a class="download" href="TRIO-E.tar.gz" download>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M9 2h2v9.6l3.3-3.3 1.4 1.4L10 15.4 4.3 9.7l1.4-1.4L9 11.6V2zM3 16h14v2H3z"/></svg>
+          Download TRIO-E <span class="size">(11.7 MB)</span>
+        </a>
+        <p class="terminal-label">Or in a terminal</p>
+        <div class="code">
+          <button class="copy" type="button" aria-label="Copy the TRIO-E commands">Copy</button>
+<pre><code><span class="ln">mkdir -p ~/GM5_family/mdt</span><span class="ln">cd ~/GM5_family/mdt</span><span class="ln">wget https://<wbr>comparativechrono.github.io/<wbr>PAH-trio/<wbr>TRIO-E.tar.gz</span><span class="ln">tar -xzf TRIO-E.tar.gz</span><span class="ln">cd TRIO-E</span><span class="ln">md5sum -c md5sums.txt</span></code></pre>
+        </div>
+        <p class="readme">What's in it: <a href="https://github.com/comparativechrono/PAH-trio/tree/main/TRIO-E">the TRIO-E README</a></p>
+      </div>
+    </article>
+  </div>
+
+  <section class="after" aria-labelledby="after-heading">
+    <h2 id="after-heading">Once you have the files</h2>
+    <ol class="steps">
+      <li>
+        <h3>Check that they arrived whole</h3>
+        <p>Every line that <code class="inline">md5sum -c md5sums.txt</code> prints should end in OK. If one doesn't, download the archive again. A computer without wget can use <code class="inline">curl -O</code> with the same address.</p>
+      </li>
+      <li>
+        <h3>Start JupyterLab in your working folder</h3>
+        <p>Run this in a terminal on your VM, then open the address it prints.</p>
+        <div class="code">
+          <button class="copy" type="button" aria-label="Copy the JupyterLab commands">Copy</button>
+<pre><code><span class="ln">conda activate gm5</span><span class="ln">cd ~/GM5_family/mdt</span><span class="ln">jupyter lab</span></code></pre>
+        </div>
+      </li>
+      <li>
+        <h3>Make the notebook fetch its own data</h3>
+        <p>Put your team's download commands in a <code class="inline">%%bash</code> cell at the top of the notebook. At 15:15 we run every notebook in a fresh folder, where nothing has been downloaded, so it has to get the reads itself.</p>
+      </li>
+      <li>
+        <h3>Use the course's reference and resources</h3>
+        <p>The reads cover the six regions of the course data, so the reference genome in <code class="inline">~/GM5_family/reference</code> and the resource files in <code class="inline">~/GM5_family/resources</code> are all you need besides the reads.</p>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>The data are for teaching. They are based on publicly available sequencing data from volunteers who consented to its open use, with changes made for this course, so they don't come from real patients.</p>
+    <p>Every family's files and README are in the GitHub repository <a href="https://github.com/comparativechrono/PAH-trio">comparativechrono/PAH-trio</a>.</p>
+  </footer>
+</main>
+
+<script>
+  // Copy the commands in a code block. Falls back to selecting the text if the clipboard isn't available.
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var code = btn.parentElement.querySelector("code");
+      var text = Array.prototype.map.call(code.querySelectorAll(".ln"), function (l) { return l.textContent; }).join("\n") + "\n";
+      var done = function () {
+        btn.textContent = "Copied";
+        btn.setAttribute("data-done", "");
+        setTimeout(function () { btn.textContent = "Copy"; btn.removeAttribute("data-done"); }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, function () { selectText(code); });
+      } else {
+        selectText(code);
+      }
+    });
+  });
+  function selectText(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+</script>
+</body>
+</html>
