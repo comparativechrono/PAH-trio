@@ -1,8 +1,8 @@
-# Coursework data: the TRIO-E family
+# MDT simulation data: the TRIO-E family
 
-These are exome sequencing reads from a family of three. The proband, TRIO-E_2-1, is male and has pulmonary arterial hypertension (PAH). His father (TRIO-E_1-2) and his mother (TRIO-E_1-1) are well, and there is no known family history of PAH.
+These are exome sequencing reads from a family of three, for the Kanban team in the MDT simulation, Voyage to planet Jupyter. The proband, TRIO-E_2-1, is male and has pulmonary arterial hypertension (PAH). His father (TRIO-E_1-2) and his mother (TRIO-E_1-1) are well, and there is no known family history of PAH.
 
-The data are for teaching. They are based on publicly available sequencing data from volunteers who consented to its open use, with changes made for this coursework, so they don't come from a real patient.
+The data are for teaching. They are based on publicly available sequencing data from volunteers who consented to its open use, with changes made for this course, so they don't come from a real patient.
 
 ## Files
 
