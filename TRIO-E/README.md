@@ -1,6 +1,6 @@
 # MDT simulation data: the TRIO-E family
 
-These are exome sequencing reads from a family of three, for the Kanban team in the MDT simulation, Voyage to planet Jupyter. The proband, TRIO-E_2-1, is male and has pulmonary arterial hypertension (PAH). His father (TRIO-E_1-2) and his mother (TRIO-E_1-1) are well, and there is no known family history of PAH.
+These are exome sequencing reads from a family of three, for the Kanban team in the MDT simulation, Voyage to planet Jupyter. The proband, TRIO-E_2-1, is a 34-year-old man who was diagnosed with pulmonary arterial hypertension (PAH) this year. His KCO is normal. His father (TRIO-E_1-2), who is 64, and his mother (TRIO-E_1-1), who is 61, have not been diagnosed with PAH, and there is no known family history of it.
 
 The data are for teaching. They are based on publicly available sequencing data from volunteers who consented to its open use, with changes made for this course, so they don't come from a real patient.
 
