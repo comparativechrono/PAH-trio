@@ -1,6 +1,6 @@
 # MDT simulation data: the TRIO-D family
 
-These are exome sequencing reads from a family of three, for the Scrum team in the MDT simulation, Voyage to planet Jupyter. The proband, TRIO-D_2-1, is a 58-year-old man who was diagnosed with pulmonary arterial hypertension (PAH) this year. His KCO is 41% of predicted, his CT shows mild changes in the lung parenchyma, and he has never smoked. His father (TRIO-D_1-2), who is 85, and his mother (TRIO-D_1-1), who is 83, have not been diagnosed with PAH, and there is no known family history of it.
+These are exome sequencing reads from a family of three, for the Scrum D and Kanban D teams in the MDT simulation, Voyage to planet Jupyter. The proband, TRIO-D_2-1, is a 58-year-old man who was diagnosed with pulmonary arterial hypertension (PAH) this year. His KCO is 41% of predicted, his CT shows mild changes in the lung parenchyma, and he has never smoked. His father (TRIO-D_1-2), who is 85, and his mother (TRIO-D_1-1), who is 83, have not been diagnosed with PAH, and there is no known family history of it.
 
 The data are for teaching. They are based on publicly available sequencing data from volunteers who consented to its open use, with changes made for this course, so they don't come from a real patient.
 
